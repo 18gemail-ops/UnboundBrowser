@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>使用手册 — 无界指纹浏览器</title>
+  <meta name="description" content="无界指纹浏览器使用手册：从安装、环境管理、代理配置到自动化与团队协作，覆盖全部 21 个模块的完整使用指南。">
+  <meta name="theme-color" content="#f5f5f7">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+  <!-- ==================== 顶部导航 ==================== -->
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-row">
+      <a class="nav-brand" href="index.html">
+        <img class="nav-logo" src="assets/img/logo.png" alt="无界指纹浏览器 Logo">
+        <span class="nav-brand-text">
+          <strong>无界指纹浏览器</strong>
+          <em>Unbound Browser</em>
+        </span>
+      </a>
+      <nav class="nav-links" aria-label="主导航">
+        <a href="index.html#features">功能特色</a>
+        <a href="index.html#gallery">界面巡览</a>
+        <a href="index.html#automation">自动化</a>
+        <a href="modules/index.html">全部模块</a>
+        <a href="manual.html" class="active">使用手册</a>
+        <a href="download.html">下载</a>
+      </nav>
+      <a class="btn btn-primary btn-sm nav-cta" href="download.html">下载 Windows 版</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ==================== 手册头部 ==================== -->
+    <section class="manual-hero">
+      <div class="container">
+        <p class="eyebrow">使用手册</p>
+        <h1 class="manual-title">从零开始，用好每一个模块</h1>
+        <p class="manual-sub">
+          覆盖安装部署、环境管理、代理配置、自动化与团队协作的完整指南。
+          内容与客户端一一对应，遇到问题时可以随时回来查阅。
+        </p>
+        <div class="manual-meta">
+          <span>v0.1.0</span>
+          <span>适用于 Windows 10 / 11 · 64 位</span>
+          <span>阅读时间约 15 分钟</span>
+        </div>
+        <div class="manual-actions">
+          <a class="btn btn-primary btn-lg" href="#quickstart">开始阅读</a>
+          <a class="btn btn-ghost btn-lg" href="download.html">下载客户端</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 章节速览 ==================== -->
+    <div class="container">
+      <div class="manual-index">
+        <a href="#quickstart"><strong>01 · 快速开始</strong><span>安装、首次启动与界面总览</span></a>
+        <a href="#environments"><strong>02 · 环境管理</strong><span>创建、批量运维与环境保险锁</span></a>
+        <a href="#fingerprint"><strong>03 · 指纹与模板</strong><span>种子机制、模板复用与启动自检</span></a>
+        <a href="#proxies"><strong>04 · 代理管理</strong><span>代理库、动态渠道与故障转移</span></a>
+        <a href="#automation"><strong>05 · 自动化</strong><span>API、MCP、流程与定时任务</span></a>
+        <a href="#vault"><strong>06 · 账号保险箱</strong><span>凭据加密保管与动态口令</span></a>
+        <a href="#team"><strong>07 · 团队协作</strong><span>局域网双模式、权限与审计</span></a>
+        <a href="#security"><strong>08 · 安全与备份</strong><span>主密码、备份恢复与更多模块</span></a>
+        <a href="#faq"><strong>09 · 常见问题</strong><span>安装与使用中的高频疑问</span></a>
+      </div>
+    </div>
+
+    <!-- ==================== 正文 ==================== -->
+    <div class="container manual-layout">
+      <aside class="manual-toc">
+        <p class="manual-toc-title">目录</p>
+        <nav aria-label="手册目录">
+          <a href="#quickstart">01 · 快速开始</a>
+          <a href="#environments">02 · 环境管理</a>
+          <a href="#fingerprint">03 · 指纹与模板</a>
+          <a href="#proxies">04 · 代理管理</a>
+          <a href="#automation">05 · 自动化</a>
+          <a href="#vault">06 · 账号保险箱</a>
+          <a href="#team">07 · 团队协作</a>
+          <a href="#security">08 · 安全与备份</a>
+          <a href="#faq">09 · 常见问题</a>
+        </nav>
+      </aside>
+
+      <div class="manual-content">
+
+        <!-- ==================== 01 快速开始 ==================== -->
+        <section class="manual-section" id="quickstart">
+          <div class="manual-section-head">
+            <span class="manual-section-num">01</span>
+            <h2>快速开始</h2>
+          </div>
+
+          <h3>安装与首次启动</h3>
+          <ol class="manual-steps">
+            <li>前往<a class="text-link" href="download.html">官网下载页</a>获取 Windows 安装包（约 509 MB），双击运行并按向导完成安装。</li>
+            <li>首次启动会看到模式选择界面，按你的使用方式二选一：
+              <ul class="manual-list">
+                <li><strong>本机使用</strong>：在本机创建与运行环境，适合绝大多数个人用户。</li>
+                <li><strong>连接主机</strong>：作为客户端接入局域网内的团队主机，详见第 07 章。</li>
+              </ul>
+            </li>
+            <li>选择「本机使用」后应用会自动重启一次，随后进入完整功能界面。</li>
+          </ol>
+          <div class="manual-note manual-note-warn">
+            <p>如果 Windows 弹出「已保护你的电脑」提示（SmartScreen），点击「更多信息 → 仍要运行」即可继续安装。</p>
+          </div>
+
+          <h3>界面总览</h3>
+          <p>软件由四组、共 21 个模块组成，左侧导航一屏直达。先看一遍总览，知道什么功能在哪里，后续查找会顺手很多。</p>
+          <table class="manual-table">
+            <thead>
+              <tr><th>模块分组</th><th>包含模块</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>环境与自动化</td><td>全部环境、启动场景、自动化流程、养号保活、任务编排、定时任务</td></tr>
+              <tr><td>资源管理</td><td>代理库、指纹模板、环境模板、脚本库、扩展管理、账号保险箱</td></tr>
+              <tr><td>数据与监控</td><td>任务中心、预览墙、通知中心、数据大盘、审计日志、备份中心</td></tr>
+              <tr><td>系统</td><td>AI 助手、用户与权限、系统设置</td></tr>
+            </tbody>
+          </table>
+          <p>窗口底部状态栏会显示当前运行的环境数量与本地 API 端点地址（默认 127.0.0.1:50325，端口被占用时自动顺延）。</p>
+
+          <h3>三步启动第一个环境</h3>
+          <ol class="manual-steps">
+            <li>点击「新建环境」并命名；不配置代理也能先用直连体验。</li>
+            <li>点击环境对应的启动按钮，等待独立浏览器窗口打开。</li>
+            <li>窗口就绪后正常登录、浏览即可；退出环境时 Cookie 与登录态都会被保留。</li>
+          </ol>
+        </section>
+
+        <!-- ==================== 02 环境管理 ==================== -->
+        <section class="manual-section" id="environments">
+          <div class="manual-section-head">
+            <span class="manual-section-num">02</span>
+            <h2>环境管理</h2>
+          </div>
+
+          <h3>新建环境</h3>
+          <p>点击「新建环境」，填写或选择以下信息：</p>
+          <ul class="manual-list">
+            <li><strong>名称</strong>：建议带上店铺与市场信息（如「NovaMarket 美国店 01」），列表里一眼可辨。</li>
+            <li><strong>平台与浏览器品牌</strong>：默认由指纹种子自动生成，也可以手动指定。</li>
+            <li><strong>语言与时区</strong>：与目标市场保持一致。</li>
+            <li><strong>代理</strong>：从代理库选择、手动填写，或先用直连；支持接入动态代理渠道。</li>
+            <li><strong>分组</strong>：用于列表归类与批量筛选。</li>
+          </ul>
+          <p>需要多个环境时使用批量创建一次生成，每个环境的命名与指纹相互独立，无需重复配置。</p>
+
+          <h3>启动与停止</h3>
+          <ul class="manual-list">
+            <li>点击启动按钮即可打开独立浏览器窗口，启动页可以按环境单独配置。</li>
+            <li>支持批量启动、批量停止；多开场景下可用窗口一键排列快速整理桌面。</li>
+            <li>配置了代理的环境会在启动前自动做代理预检，检测不通过会取消启动，从源头避免真实 IP 泄漏。</li>
+            <li>退出环境后 Cookie、缓存与登录态保留，下次启动直接续用。</li>
+          </ul>
+
+          <h3>分组、筛选与回收站</h3>
+          <p>通过分组与标签整理环境，配合搜索快速定位目标。删除的环境会先进入回收站，可随时还原，确认无误后再彻底清除。</p>
+
+          <h3>环境保险锁</h3>
+          <p>对重要环境开启保险锁后，删除、修改等敏感操作会被拦截。多人共用一台主机时，给核心店铺环境上锁可以有效防止误操作。</p>
+
+          <h3>磁盘占用与缓存清理</h3>
+          <p>环境列表中可以看到每个环境的磁盘占用情况。长期运行后可定期清理缓存释放空间，账号数据与登录态不受影响。</p>
+
+          <h3>启动场景与预览墙</h3>
+          <ul class="manual-list">
+            <li><strong>启动场景</strong>：把一组常用环境保存为场景，上班第一件事就是「一键多开」。</li>
+            <li><strong>预览墙</strong>：把运行中的环境以窗口矩阵缩略图铺开，快速巡检每个环境的当前画面。</li>
+          </ul>
+        </section>
+
+        <!-- ==================== 03 指纹与模板 ==================== -->
+        <section class="manual-section" id="fingerprint">
+          <div class="manual-section-head">
+            <span class="manual-section-num">03</span>
+            <h2>指纹与模板</h2>
+          </div>
+
+          <h3>种子驱动指纹</h3>
+          <p>
+            每个环境由一串「种子」驱动生成整套指纹：系统平台、浏览器品牌与版本、CPU 核心数、语言、时区彼此协调一致，
+            不会出现「Windows 却报告英文系统与东京时区」这类自相矛盾的组合。
+          </p>
+          <p>种子不同的环境，指纹完全独立；同一个环境每次启动保持一致，不会随机漂移，账号登录环境长期稳定。</p>
+
+          <h3>指纹模板与环境模板</h3>
+          <ul class="manual-list">
+            <li><strong>指纹模板</strong>：把一套指纹参数（平台、品牌、语言、时区）保存为模板，新建环境时直接套用，或批量应用到已有环境。</li>
+            <li><strong>环境模板</strong>：把代理策略、启动页、分组等整套配置一起沉淀，适合连锁店群与标准化交付场景。</li>
+          </ul>
+          <p>模板让「调好一个、复制一百个」成为常规操作，也是团队之间传递配置经验的最佳载体。</p>
+
+          <h3>启动自检页</h3>
+          <p>可以按环境开启启动后自动打开自检页，快速核对关键指纹项是否一致、是否存在异常泄漏迹象。养成「新环境先自检、再登录」的习惯，异常会在上线前就被发现。</p>
+
+          <div class="manual-note">
+            <p>建议让出口 IP、语言与时区三者指向同一地区，例如美国店铺就配美国代理 + en-US + America/New_York。</p>
+          </div>
+        </section>
+
+        <!-- ==================== 04 代理管理 ==================== -->
+        <section class="manual-section" id="proxies">
+          <div class="manual-section-head">
+            <span class="manual-section-num">04</span>
+            <h2>代理管理</h2>
+          </div>
+
+          <h3>添加代理</h3>
+          <p>在「代理库」点击添加，选择类型（HTTP / SOCKS5），填写主机、端口与账号密码（如有）。添加完成后建议立即执行一次连通检测，确认线路可用。</p>
+
+          <h3>代理库与健康总览</h3>
+          <ul class="manual-list">
+            <li>顶部健康总览实时呈现「健康 / IP 变化 / 失败」三态分布，出口资源质量一眼可见。</li>
+            <li>一键体检会批量检测全部代理，每条代理保留检测历史，线路是否稳定有据可查。</li>
+            <li>代理是共享资产：在代理库修改一次，所有引用它的环境同步生效。</li>
+          </ul>
+
+          <h3>动态代理渠道</h3>
+          <p>使用按量计费的动态代理时，可以配置渠道提取链接，让软件按需自动提取新的出口 IP，无需手动替换。</p>
+
+          <h3>出口检测</h3>
+          <p>在代理或环境上执行出口检测，可以验证真实出口 IP、归属地与生效时区，确认与目标市场精确匹配。</p>
+
+          <h3>启动前预检与故障转移</h3>
+          <ul class="manual-list">
+            <li>配置代理的环境在启动前会自动预检；检测不通过时取消启动并给出提示，确保流量不会在代理失效时泄漏真实 IP。</li>
+            <li>可以为代理配置备用线路，主线路失联时自动切换，环境运行不中断。</li>
+          </ul>
+
+          <h3>定期巡检</h3>
+          <p>结合定时任务可以定期执行三类巡检：线路健康、代理出口与登录状态。发现异常会通过通知中心提醒，让问题在影响账号之前被处理。</p>
+        </section>
+
+        <!-- ==================== 05 自动化 ==================== -->
+        <section class="manual-section" id="automation">
+          <div class="manual-section-head">
+            <span class="manual-section-num">05</span>
+            <h2>自动化</h2>
+          </div>
+          <p>无界提供三种接入方式，从零代码到全代码，按你的团队情况自由选择。</p>
+
+          <h3>本地 HTTP API</h3>
+          <p>软件运行时会开启本地接口（默认 127.0.0.1:50325，被占用时自动顺延），脚本可以直接启动、停止环境并获取调试端点：</p>
+          <div class="code-card">
+            <div class="code-head">
+              <span class="code-lang">HTTP API</span>
+              <span class="code-file">127.0.0.1:50325</span>
+            </div>
+            <pre class="code-body"><code><span class="c"># 列出全部环境与运行状态</span>
+curl http://127.0.0.1:50325/api/envs
+
+<span class="c"># 启动环境并获取 CDP 调试端点</span>
+curl -X POST http://127.0.0.1:50325/api/envs/NovaMarket/start
+
+<span class="c"># 停止环境</span>
+curl -X POST http://127.0.0.1:50325/api/envs/NovaMarket/stop</code></pre>
+          </div>
+
+          <h3>MCP 端点（AI 客户端）</h3>
+          <p>内置 MCP（Model Context Protocol）端点，Claude Desktop、Cursor 等支持 MCP 的 AI 客户端可以直接调用环境能力，让 AI 帮你完成批量操作与日常运维。</p>
+
+          <h3>Playwright 直连</h3>
+          <p>任何支持 CDP 的自动化框架都能接入运行中的环境，以 Playwright 为例：</p>
+          <div class="code-card">
+            <div class="code-head">
+              <span class="code-lang">Playwright</span>
+              <span class="code-file">connect-over-cdp.mjs</span>
+            </div>
+            <pre class="code-body"><code><span class="k">import</span> { chromium } <span class="k">from</span> <span class="s">'playwright'</span>
+
+<span class="c">// 接入运行中的环境（自动等待调试端口就绪）</span>
+<span class="k">const</span> browser = <span class="k">await</span> chromium.connectOverCDP(cdpEndpoint)
+<span class="k">const</span> page = browser.contexts()[<span class="n">0</span>].pages()[<span class="n">0</span>]
+<span class="k">await</span> page.goto(<span class="s">'https://example.com'</span>)</code></pre>
+          </div>
+
+          <h3>自动化流程</h3>
+          <p>
+            不写代码也可以做自动化：在环境中把操作演示一遍，操作录制会生成可回放的流程；
+            也可以在可视化编辑器中编排多步骤任务，把流程绑定到指定环境，下次一键执行。
+          </p>
+
+          <h3>任务编排与定时任务</h3>
+          <ul class="manual-list">
+            <li><strong>任务编排</strong>：把多个任务组合成流水线，例如「启动环境 → 打开店铺 → 截图存档 → 停止环境」。</li>
+            <li><strong>定时任务</strong>：支持启动、停止、巡检、执行流程与快照五种类型，可按每日、工作日或单次执行，适合早晚班自动值守。</li>
+            <li><strong>养号保活</strong>：定时让环境模拟真实浏览行为，维持账号活跃度与登录态。</li>
+            <li><strong>任务中心</strong>：所有任务的进度与历史集中呈现，失败原因可回溯。</li>
+          </ul>
+        </section>
+
+        <!-- ==================== 06 账号保险箱 ==================== -->
+        <section class="manual-section" id="vault">
+          <div class="manual-section-head">
+            <span class="manual-section-num">06</span>
+            <h2>账号保险箱</h2>
+          </div>
+
+          <h3>保存凭据</h3>
+          <p>每条凭据包含名称、站点、账号、密码、备注与标签，加密保存在本机。环境多、账号多的时候，配合标签检索比翻表格快得多。</p>
+
+          <h3>动态口令（TOTP）</h3>
+          <p>添加凭据时可以录入两步验证密钥（Base32 格式），保险箱会像验证器应用一样实时生成 30 秒动态口令，登录时随用随取，不必再掏出手机。</p>
+
+          <h3>一键填充</h3>
+          <p>在环境中遇到登录页时，可以直接从保险箱选择对应凭据完成填充，无需复制粘贴密码，既快又降低凭据泄露风险。</p>
+
+          <div class="manual-note">
+            <p>保险箱与主密码联动：开启主密码锁后，每次启动软件都需要验证身份，才能访问其中保存的凭据。</p>
+          </div>
+        </section>
+
+        <!-- ==================== 07 团队协作 ==================== -->
+        <section class="manual-section" id="team">
+          <div class="manual-section-head">
+            <span class="manual-section-num">07</span>
+            <h2>团队协作</h2>
+          </div>
+
+          <h3>两种工作模式</h3>
+          <ul class="manual-list">
+            <li><strong>主机模式</strong>：由一台性能较好的电脑运行环境与数据，在系统设置中开启共享，局域网内的成员即可连接使用。</li>
+            <li><strong>客户端模式</strong>：团队成员在自己电脑安装同款客户端，首次启动选择「连接主机」并填写主机地址，即可共用同一套环境、代理与账号资产。</li>
+          </ul>
+          <p>环境始终运行在主机上，成员客户端负责操作与查看，硬件资源不重复投入，一套环境池服务整个团队。</p>
+
+          <h3>多用户与权限</h3>
+          <p>在「用户与权限」中创建成员账户并分配权限：谁能查看、谁能启动、谁能修改资源，按角色控制，避免误操作。</p>
+
+          <h3>审计日志</h3>
+          <p>成员的关键操作全程留痕，支持按成员、类型与时间筛选，并可导出归档。出了问题，能快速定位到人、事与时间。</p>
+        </section>
+
+        <!-- ==================== 08 安全与备份 ==================== -->
+        <section class="manual-section" id="security">
+          <div class="manual-section-head">
+            <span class="manual-section-num">08</span>
+            <h2>安全与备份</h2>
+          </div>
+
+          <h3>主密码锁</h3>
+          <ul class="manual-list">
+            <li>设置主密码后，每次启动软件都需要验证，防止他人打开电脑直接查看环境与凭据。</li>
+            <li>支持自动锁定与严格模式：离开电脑一段时间后自动上锁，回来后重新验证。</li>
+            <li>如果忘记主密码，可通过重置流程在经过冷静期后重新获得访问权限；已保存的环境数据不受影响。</li>
+          </ul>
+
+          <h3>备份中心</h3>
+          <ul class="manual-list">
+            <li>支持本地备份与 WebDAV 备份，可以备份到自己的 NAS 或云盘，数据始终由自己掌控。</li>
+            <li>恢复支持整体回滚；换新电脑时，先安装软件再还原备份，即可无缝迁移全部环境与配置。</li>
+          </ul>
+
+          <h3>更多模块速览</h3>
+          <p>剩下的模块都比较轻量，用到时在左侧导航里点开即可，这里先一句话认识它们：</p>
+          <table class="manual-table">
+            <thead>
+              <tr><th>模块</th><th>能做什么</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>通知中心</td><td>代理异常、任务失败等关键事件集中提醒</td></tr>
+              <tr><td>数据大盘</td><td>环境与任务的运行数据与趋势统计</td></tr>
+              <tr><td>AI 助手</td><td>用自然语言描述需求，辅助完成日常操作</td></tr>
+              <tr><td>脚本库</td><td>自动化脚本统一管理，按环境分发</td></tr>
+              <tr><td>扩展管理</td><td>浏览器扩展按环境装载与停用</td></tr>
+              <tr><td>系统设置</td><td>主题、启动行为、安全策略等全局偏好</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <!-- ==================== 09 常见问题 ==================== -->
+        <section class="manual-section" id="faq">
+          <div class="manual-section-head">
+            <span class="manual-section-num">09</span>
+            <h2>常见问题</h2>
+          </div>
+
+          <div class="faq-list">
+            <details class="faq-item">
+              <summary>安装时 Windows 提示「已保护你的电脑」，还能继续吗？</summary>
+              <div class="faq-body">
+                这是 SmartScreen 对尚未广泛下载的安装包的常规提示，并非病毒警告。点击「更多信息」，再选择「仍要运行」即可继续安装。
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary>环境启动失败并提示「代理预检失败」怎么办？</summary>
+              <div class="faq-body">
+                说明该环境绑定的代理当前不可用。请先在代理库对它执行检测，确认主机、端口与账号密码正确；如果暂时不需要代理，可以改为直连再启动。预检机制的作用，是避免流量在代理失效时泄漏真实 IP。
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary>数据保存在哪里？换电脑怎么迁移？</summary>
+              <div class="faq-body">
+                全部数据默认保存在本机，不上传云端。迁移到新电脑时：旧电脑在备份中心导出备份，新电脑安装软件后还原即可，环境、代理与凭据一并迁移。
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary>怎么让脚本或 AI 驱动这些环境？</summary>
+              <div class="faq-body">
+                使用本地 HTTP API（默认 127.0.0.1:50325）或 MCP 端点接入；Playwright 等自动化框架可通过 CDP 直连运行中的环境。完整示例见「05 · 自动化」章节。
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary>一台电脑同时运行多少个环境比较合适？</summary>
+              <div class="faq-body">
+                取决于内存与 CPU 配置。建议从少量开始逐步增加，观察系统负载；长时间批量运行时，可以配合任务编排控制并发节奏，稳定优先。
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary>忘记主密码了怎么办？</summary>
+              <div class="faq-body">
+                在解锁界面选择重置流程，经过冷静期后即可重新设置主密码；已有环境数据不会被清除。建议同时开启备份中心的定期备份，做到双保险。
+              </div>
+            </details>
+          </div>
+
+          <div class="manual-note">
+            <p>没有找到答案？回到软件里打开「AI 助手」直接提问，它熟悉全部模块的用法。</p>
+          </div>
+        </section>
+
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ==================== 页脚 ==================== -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="assets/img/logo.png" alt="无界指纹浏览器">
+        <div>
+          <strong>无界指纹浏览器</strong>
+          <p>无限环境，无界运营。多账号管理的一站式本地解决方案。</p>
+        </div>
+      </div>
+      <nav class="footer-links" aria-label="页脚导航">
+        <a href="index.html">官网首页</a>
+        <a href="index.html#features">功能特色</a>
+        <a href="index.html#gallery">界面巡览</a>
+        <a href="#quickstart">快速开始</a>
+        <a href="#faq">常见问题</a>
+        <a href="download.html">下载</a>
+      </nav>
+    </div>
+    <div class="container footer-bottom">
+      <p>© <span id="year">2026</span> 无界指纹浏览器 · Unbound Browser</p>
+      <p class="footer-disclaimer">请遵守目标网站的服务条款与当地法律法规，将本软件用于合法的账号管理与自动化场景。</p>
+    </div>
+  </footer>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>

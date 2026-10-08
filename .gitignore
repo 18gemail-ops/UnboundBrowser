@@ -1,0 +1,12 @@
+# 安装包（509 MB，超出 GitHub 单文件 100 MB 限制）
+# 分发方式：GitHub Releases 附件（本地保留此文件用于预览与自托管）
+downloads/*.exe
+
+# 本地预览/巡检临时产物
+.dlcheck/
+.modulecheck/
+tmp-*.mjs
+
+# 操作系统杂项
+Thumbs.db
+.DS_Store
