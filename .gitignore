@@ -5,6 +5,7 @@ downloads/*.exe
 # 本地预览/巡检临时产物
 .dlcheck/
 .modulecheck/
+.tmp-*/
 tmp-*.mjs
 
 # 操作系统杂项

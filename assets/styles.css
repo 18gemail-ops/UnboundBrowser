@@ -2505,6 +2505,7 @@ a {
 .dl-code {
   display: block;
   flex: 1;
+  min-width: 0;
   background: var(--bg);
   border: 1px solid var(--border);
   border-radius: 12px;
@@ -2512,7 +2513,7 @@ a {
   font-family: ui-monospace, "SF Mono", "Cascadia Mono", Consolas, monospace;
   font-size: 12.5px;
   line-height: 1.7;
-  word-break: break-all;
+  overflow-wrap: break-word;
   color: var(--text);
 }
 
