@@ -908,41 +908,43 @@ a {
 }
 
 .footer-maker-logo {
-  width: 52px;
-  height: 32px;
-  object-fit: contain;
+  height: 35px;
+  width: auto;
   flex-shrink: 0;
 }
 
 .footer-maker-text {
   display: flex;
   flex-direction: column;
-  gap: 3px;
+  gap: 5px;
 }
 
 .footer-maker-row {
   display: inline-flex;
-  align-items: baseline;
+  align-items: center;
   gap: 8px;
 }
 
 .footer-maker-name {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 600;
   letter-spacing: 0.02em;
+  line-height: 1;
   color: var(--text);
   transition: color 0.25s ease;
 }
 
 .footer-maker-en {
-  font-size: 9.5px;
+  font-size: 10px;
   font-weight: 600;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.15em;
+  line-height: 1;
   color: var(--text-faint);
 }
 
 .footer-maker-sub {
   font-size: 11.5px;
+  line-height: 1;
   color: var(--text-faint);
   transition: color 0.25s ease;
 }
